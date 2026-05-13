@@ -192,6 +192,29 @@
   ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
   .no-data { color: var(--muted); font-size: 13px; text-align: center; padding: 40px; }
+.chart-explanation {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid var(--accent);
+  color: #cbd5e1;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.chart-explanation strong {
+  color: #ffffff;
+}
+
+.chart-explanation ul {
+  margin-top: 6px;
+  padding-left: 18px;
+}
+
+.chart-explanation li {
+  margin-bottom: 4px;
+}
 </style>
 </head>
 <body>
@@ -268,15 +291,42 @@
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Pass vs Fail by Zone</div><div class="chart-sub">Count of students — filtered view</div></div>
       <div class="chart-canvas-wrap" style="height:320px"><canvas id="zonePassFailChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>How to read this chart:</strong>
+  <ul>
+    <li>Each bar represents a zone in the district.</li>
+    <li>The chart compares the number of learners who passed and failed in each zone.</li>
+    <li>Zones with taller green bars are performing better academically.</li>
+    <li>Zones with taller red bars may require additional academic support and interventions.</li>
+  </ul>
+</div>
     </div>
     <div class="charts-grid-2" style="display:grid;grid-template-columns:1fr;gap:16px">
       <div class="chart-card">
         <div class="chart-header"><div class="chart-title">Overall Pass/Fail Distribution</div><div class="chart-sub">District-wide breakdown</div></div>
         <div class="chart-canvas-wrap" style="height:200px"><canvas id="passFaiDonut"></canvas></div>
+<div class="chart-explanation">
+  <strong>What this chart shows:</strong>
+  <ul>
+    <li>This donut chart summarizes the overall district examination outcome.</li>
+    <li>The green section represents learners who passed.</li>
+    <li>The red section represents learners who failed.</li>
+    <li>A larger green portion indicates better overall district performance.</li>
+  </ul>
+</div>
       </div>
       <div class="chart-card">
         <div class="chart-header"><div class="chart-title">Pass Rate by Zone (Ranked)</div><div class="chart-sub">% pass rate per zone, highest to lowest</div></div>
         <div class="chart-canvas-wrap" style="height:200px"><canvas id="zonePassRateChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Interpretation:</strong>
+  <ul>
+    <li>This chart ranks zones from highest to lowest pass rate.</li>
+    <li>Higher percentages indicate stronger learner performance.</li>
+    <li>It helps identify the best-performing and low-performing zones.</li>
+    <li>The ranking can support planning for targeted interventions.</li>
+  </ul>
+</div>
       </div>
     </div>
   </div>
@@ -287,10 +337,28 @@
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Average Score per Subject</div><div class="chart-sub">District-wide subject performance</div></div>
       <div class="chart-canvas-wrap" style="height:280px"><canvas id="avgSubjectChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>This chart compares average performance across all subjects.</li>
+    <li>Subjects with taller bars have higher average learner scores.</li>
+    <li>Subjects with lower averages may require extra teaching support.</li>
+    <li>The chart helps identify strengths and weaknesses in subject performance.</li>
+  </ul>
+</div>
     </div>
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Subject Scores by Gender</div><div class="chart-sub">Male vs Female average per subject</div></div>
       <div class="chart-canvas-wrap" style="height:280px"><canvas id="genderSubjectChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>This chart compares average subject scores between male and female learners.</li>
+    <li>It helps identify gender gaps in academic achievement.</li>
+    <li>Small differences suggest balanced performance.</li>
+    <li>Large differences may indicate areas needing gender-focused support.</li>
+  </ul>
+</div>
     </div>
   </div>
 
@@ -300,10 +368,28 @@
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Total Score Distribution</div><div class="chart-sub">Histogram — spread of student total scores</div></div>
       <div id="histogramWrap" style="height:260px"><canvas id="histogramChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>This histogram shows how learner scores are distributed.</li>
+    <li>Taller bars represent score ranges with more learners.</li>
+    <li>The chart helps determine whether most learners scored high, average, or low marks.</li>
+    <li>A balanced spread indicates varied learner performance levels.</li>
+  </ul>
+</div>
     </div>
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Gender Distribution by Zone</div><div class="chart-sub">Male vs Female student count per zone</div></div>
       <div class="chart-canvas-wrap" style="height:260px"><canvas id="genderZoneChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>This chart compares male and female learner enrollment by zone.</li>
+    <li>It helps identify gender balance across the district.</li>
+    <li>Zones with large gender differences may require further investigation.</li>
+    <li>The chart supports gender equity monitoring in education.</li>
+  </ul>
+</div>
     </div>
   </div>
 
@@ -313,10 +399,28 @@
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Top 10 Schools by Avg Total Score</div><div class="chart-sub">Best performing schools in filtered view</div></div>
       <div class="chart-canvas-wrap" style="height:280px"><canvas id="top10SchoolsChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>This chart displays the highest-performing schools based on average total scores.</li>
+    <li>Schools at the top achieved stronger learner performance overall.</li>
+    <li>The chart can be used to identify successful schools and best practices.</li>
+    <li>These schools may serve as benchmarks for others in the district.</li>
+  </ul>
+</div>
     </div>
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Bottom 10 Schools by Avg Total Score</div><div class="chart-sub">Lowest performing schools — needs attention</div></div>
       <div class="chart-canvas-wrap" style="height:280px"><canvas id="bottom10SchoolsChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>This chart highlights schools with the lowest average total scores.</li>
+    <li>These schools may require academic support, monitoring, and intervention.</li>
+    <li>The chart helps education managers prioritize improvement efforts.</li>
+    <li>Performance trends can be monitored over time using this information.</li>
+  </ul>
+</div>
     </div>
   </div>
 
@@ -324,10 +428,29 @@
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Student Count by Zone (Tree Map)</div><div class="chart-sub">Zone size reflects number of students enrolled</div></div>
       <div id="treemapContainer" style="height:280px"></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>Each block represents a zone in the district.</li>
+    <li>Larger blocks indicate zones with more learners.</li>
+    <li>The chart helps visualize learner population distribution across zones.</li>
+    <li>This information supports planning for resources and staffing.</li>
+  </ul>
+</div>
     </div>
     <div class="chart-card">
       <div class="chart-header"><div class="chart-title">Avg Subject Score vs Pass Rate per School</div><div class="chart-sub">Scatter plot — correlation between score and outcomes</div></div>
       <div id="scatterWrap" style="height:280px"><canvas id="scatterChart"></canvas></div>
+<div class="chart-explanation">
+  <strong>Explanation:</strong>
+  <ul>
+    <li>Each point represents a school.</li>
+    <li>The chart compares average subject scores with pass rates.</li>
+    <li>Schools appearing higher and further right are generally performing better.</li>
+    <li>The chart helps identify relationships between learner scores and examination success.</li>
+  </ul>
+</div>
+
     </div>
   </div>
 
